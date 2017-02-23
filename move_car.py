@@ -41,7 +41,7 @@ class Vehicle():
 vehicle_one_pos = raw_input().split()
 
 # User input 3:
-# The first vehicle
+# Sequence of first vehicle movement
 
 vehicle_one_commands = raw_input()
 
@@ -59,7 +59,7 @@ first_vehicle_y = vehicle_one.y
 vehicle_two_pos = raw_input().split()
 
 # User input 5:
-# The second vehicle
+# Sequence of second vehicle movement
 
 vehicle_two_commands = raw_input()
 
