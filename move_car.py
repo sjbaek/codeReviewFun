@@ -34,6 +34,9 @@ class Vehicle():
                 self.x = new_x
             if new_y in xrange(GRID_MAX_Y+1):
                 self.y = new_y
+
+    # Add simple directional functions
+    
     def go_north(self): 
         self.dir = directions[0]
     def go_east(self):
