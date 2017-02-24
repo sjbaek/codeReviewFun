@@ -2,7 +2,8 @@
 
 directions = ['N','E','S','W'] 
 movement = {'N': (0,1), 'E': (1,0), 'S': (0,-1), 'W':(-1,0)}
-commands = {'L': 'turn_left', 'R': 'turn_right', 'M': 'move'}
+commands = {'L': 'turn_left', 'R': 'turn_right', 'M': 'move', \
+'E':'go_east', 'W':'go_west', 'N':'go_north', 'S':'go_south'}
 
 # User input 1: define grid size
 GRID_MAX_X, GRID_MAX_Y = map(int, raw_input().split())
@@ -33,6 +34,16 @@ class Vehicle():
                 self.x = new_x
             if new_y in xrange(GRID_MAX_Y+1):
                 self.y = new_y
+    def go_north(self): 
+        self.dir = directions[0]
+    def go_east(self):
+        self.dir = directions[1]
+    def go_south(self):
+        self.dir = directions[2]
+    def go_west(self):
+        self.dir = directions[3]
+    
+    
 
 # User input 2:
 # First vehicle: The current position and facing direction for the first vehicle; 
@@ -63,7 +74,7 @@ vehicle_two_pos = raw_input().split()
 
 vehicle_two_commands = raw_input()
 
-vehicle_two = Vehicle(int(vehicle_two_pos[0]), int(vehicle_two_pos[1]), vehicle_two_ps[2])
+vehicle_two = Vehicle(int(vehicle_two_pos[0]), int(vehicle_two_pos[1]), vehicle_two_pos[2])
 for command in vehicle_two_commands:
     eval("vehicle_two.{0}()".format(commands[command]))
 
